@@ -6,7 +6,7 @@ namespace Media4Notas
     {
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+              Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("-- Média --");
             Console.ResetColor();
 
@@ -26,37 +26,25 @@ namespace Media4Notas
 
             double media = (um + dois + tres + quatro) / 4; 
             
-            if (um > 10.0 || dois > 10.0 || tres > 10.0 || quatro > 10.0)
+            if (um < 0 || um > 10 || dois < 0 || dois > 10 || tres < 0 || tres > 10.0 || quatro < 0 || quatro > 10.0)
             {
                 Console.WriteLine("Por favor, digite somente notas entre 0 e 10.");
             }
-            else if (media < 5.0)
+            else
             {
-                Console.WriteLine($"Você ficou com média {media}. Resultado: Reprovado");
+                if (media < 5.0)
+                {
+                    Console.WriteLine($"Você ficou com média {media}. Resultado: Reprovado");
+                }
+                else if (media >= 6.0)
+                {
+                    Console.WriteLine($"Você ficou com média {media}. Resultado: Aprovado");
+                }
+                else
+                {
+                    Console.WriteLine($"Você ficou com média {media}. Resultado: Em recuperação");
+                }
             }
-            else if (media >= 6.0)
-            {
-                Console.WriteLine($"Você ficou com média {media}. Resultado: Aprovado");
-            }
-            else if (media >= 5.0 && media <=6.0) 
-            {
-                Console.WriteLine($"Você ficou com média {media}. Resultado: Em recuperação");
-            }
-
-
-            
-
-            
-            
-            
-            
-            
-
-
-
-
-
-
         }
     }
 }
